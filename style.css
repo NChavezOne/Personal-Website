@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+==================================
+This document is the CSS
+styling for my personal
+website, nicholas-chavez.com
+
+Copyright (C) 2022 Nicholas Chavez
+==================================
+*/
+
+/*4/27/22 - reorganized the tabbing of the CSS code*/
+
+
+/*styling for IMGs*/
+video {
+	max-width:80%;
+}
+img {
+	max-width:80%;	
+}
+img.centerImg { /*this code centers the Img within a Div*/
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	
+	width:65%;
+}
+img.Main { /*This is for responsive img designs*/
+  width: 80%;
+  height: auto;
+}
+figure {
+	display:inline-block;
+}
+
+/* styling for link colors */
+.linkColor {
+	color:#FF0000;
+}
+
+/*Text related styling*/
+@font-face { /*Defining share tech mono font*/
+	font-family: Share Tech Mono; src:url("font/ShareTechMono-Regular.ttf"); 
+}
+.mainFont {
+	font-family:Share Tech Mono;
+}
+.secondaryFont {
+	font-family:Helvetica;
+}
+figcaption {
+	font-family:Helvetica;
+}
+h1 {
+	font-family:Share tech mono;
+}
+h3 {
+	font-family:Share tech mono;
+}
+p {
+	font-family:"Helvetica";
+	line-height:135%;
+}
+ul {
+	font-family:"Helvetica";
+	line-height:135%;
+}
+
+
+/*The div organization for the website*/
+
+/*FOR MOBILE BROWSER RESCALING*/
+@media screen and (max-width: 500px) { /*for rescaling the socials buttons if on mobile*/
+	div.divIcon {
+		width:35px;
+		height:35px;
+	}
+	div.content {
+		padding-top:35%;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	div.divTop {
+		height:20%;
+	}
+	ul.nav {
+		top:20%;
+	}
+}
+
+.divIcon { /*This is the div for icons for the socials contact page*/
+	position:relative;
+	width:50px;
+	height:50px;
+	
+	background-color:#ff0000;
+	
+	/*To align the images inside of the Icons*/
+	vertical-align:middle; 
+	text-align:center;
+		
+	/*rounded corners*/
+	border-radius:20px;
+	
+	/*Space between the icons*/
+	display:inline-block;
+	margin-right:10px;
+}
+
+.divTop { /*the div for the title section of the website*/
+	position:absolute;
+	
+	/*padding for the title text*/
+	padding-left:3%;
+	padding-top:20px;
+	
+	top:0px;
+	left:0px;
+	
+	height:10%;
+	width:97%;
+	
+	
+	background-color:#000000;
+	
+	/*information for the background image*/
+	
+	background-image: url("img/Backdrop1.png");
+	background-repeat: no-repeat;
+	background-position:right;
+	background-size:45vw;
+	
+	color:#FFFFFF;
+	
+	font-size:6vw; /*to scale with the div*/
+	font-family: Share Tech Mono;
+	text-align:left;
+}
+
+.divBottom { /*The footer for the bottom portion of the website (copyright information) */
+	position:absolute;
+	left: 0%;
+	width:100%;
+	
+	background-color: #333;
+	color: #ffffff;
+	
+	/*padding*/
+	padding-top:6px;
+	padding-bottom:6px;
+	
+	text-align: center;
+	font-size:10px;
+}
+
+/* code for the navigation menu */
+
+.nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	
+	position: absolute;
+	left:0px;
+	top: 10%;
+	width: 100%;
+	z-index:20;
+}
+li {
+	float: left;
+	font-family:Share Tech Mono;
+}
+li a {
+	display: block;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+li a:hover:not(.active) {
+	background-color: #111;
+}
+.active {
+	background-color: #FF0000; /*The same color as red on my PCB backdrop */
+}
+
+
+/*
+CODE FOR STICKY FOOTER
+===========================================================================
+*/
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+	padding-top:15%; /*my own code -nicholas*/
+}
+.footer {
+  flex-shrink: 0;
+}
+/*
+===========================================================================
+*/
+
