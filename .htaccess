@@ -1,18 +1,21 @@
 # Prevent users from accessing the server directories.
 Options -Indexes
 
-# Redirect to https: 8/4/22
+# Redirect to https.
 RewriteEngine On 
 RewriteCond %{HTTPS} !=on 
-RewriteRule ^/?(.*) https://myrobuxgenerator.site [R,L]
+RewriteRule ^/?(.*) https://nicholas-chavez.com [R,L]
 
-# Remove .html file extension from the URL. 8/9/22
+# Remove .html file extension from the URL.
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
 
-#Remove PHP Error messages 9/6/22
-# PHP error handling for development servers
+# Rewrite index page to be simply the domain.
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+
+#Remove PHP Error messages.
 
 #php_flag display_startup_errors off
 #php_flag display_errors off
@@ -28,10 +31,7 @@ RewriteRule ^(.*)$ $1.php
 #php_value error_reporting -1
 #php_value log_errors_max_len 0
 
-#Disable ETAG Bullshit FUCK THAT 9/8/22
-#Forgot what this was for? 9/17/22
-#Okay, it's for webpage caching which allows it to update to the latest
-#Version better. Keep this for all sites.
+#Disable ETAG so the webpages don't get cached.
 FileETag None
 <ifModule mod_headers.c>
     Header unset ETag
